@@ -1,0 +1,268 @@
+:root {
+    --ana: #6b3fa0;
+    --ana-acik: #c2a5de;
+    --vurgu: #d6409f;
+    --buton: #b02b82;   /* vurgu renginin biraz koyusu: beyaz yazı okunaklı olsun diye */
+    --yazi: #2b2b2b;
+    --arka: #f7e1ff;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+    color: var(--yazi);
+    background: var(--arka);
+    line-height: 1.6;
+}
+
+/* ---------- Üst menü ---------- */
+header {
+    background: var(--ana);
+}
+
+nav {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 14px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+.logo {
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.menu a {
+    margin-left: 18px;
+}
+
+.menu a:hover {
+    text-decoration: underline;
+}
+
+/* ---------- Genel ---------- */
+main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 30px 20px;
+}
+
+h1, h2 {
+    color: var(--ana);
+}
+
+.kutu {
+    background: white;
+    border-radius: 12px;
+    padding: 20px 25px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.buton {
+    display: inline-block;
+    background: var(--buton);
+    color: white;
+    padding: 10px 22px;
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.buton:hover {
+    opacity: 0.85;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    color: #555;
+}
+
+/* ---------- Ana sayfa ---------- */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    padding: 30px 0;
+}
+
+.alt-baslik {
+    font-size: 1.2rem;
+}
+
+.avatar {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background: white;
+    border: 4px solid var(--ana);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    color: var(--ana);
+    font-size: 3rem;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+.avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.ilgi-alanlari {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.ilgi-alanlari li {
+    background: white;
+    color: var(--ana);
+    border: 2px solid var(--ana-acik);
+    padding: 3px 14px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+/* ---------- Projeler ---------- */
+.project_list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.project_card {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    width: calc(33.333% - 14px);
+    border-top: 5px solid var(--vurgu);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.project_card .buton {
+    margin-top: auto;   /* buton her zaman kartın en altında durur */
+}
+
+.project_card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+}
+
+.project_card img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.project_card h3 {
+    color: var(--ana);
+    margin-top: 0;
+}
+
+.geri {
+    color: var(--ana);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.geri:hover {
+    text-decoration: underline;
+}
+
+.detay {
+    margin-top: 15px;
+}
+
+.detay-gorsel {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+/* ---------- İletişim formu ve mesajlar ---------- */
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    max-width: 500px;
+}
+
+.form input,
+.form textarea {
+    padding: 10px;
+    border: 2px solid var(--ana-acik);
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+.form .buton {
+    align-self: flex-start;
+    margin-top: 6px;
+}
+
+.form input:focus,
+.form textarea:focus {
+    outline: none;
+    border-color: var(--ana);
+}
+
+.bildirim {
+    background: #e6f4ea;
+    border-left: 5px solid #2e8b57;
+    padding: 10px 15px;
+    border-radius: 6px;
+    margin-bottom: 15px;
+}
+
+.mesaj {
+    margin-bottom: 12px;
+}
+
+.mesaj small {
+    color: #555;
+    margin-left: 8px;
+}
+
+/* ---------- Telefon ve küçük ekranlar ---------- */
+@media (max-width: 700px) {
+    .project_card {
+        width: 100%;
+    }
+
+    .hero {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+
+    nav {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .menu a {
+        margin: 0 9px;
+    }
+}
